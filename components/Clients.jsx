@@ -51,10 +51,10 @@ export const LogoutBtn = () => {
 
 export const TodoButton = ({ id, completed }) => {
   const router = useRouter();
-  const updateHandler = async (id) => {
+  const deleteHandler = async (id) => {
     try {
       const res = await fetch(`/api/task/${id}`, {
-        method: 'PUT',
+        method: 'DELETE',
       });
       const data = await res.json();
       if (!data.success) return toast.error(data.message);
@@ -64,10 +64,11 @@ export const TodoButton = ({ id, completed }) => {
       return toast.error(error);
     }
   };
-  const deleteHandler = async (id) => {
+
+  const updateHandler = async (id) => {
     try {
       const res = await fetch(`/api/task/${id}`, {
-        method: 'DELETE',
+        method: 'PUT',
       });
       const data = await res.json();
       if (!data.success) return toast.error(data.message);

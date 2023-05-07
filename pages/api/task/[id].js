@@ -11,7 +11,7 @@ const handler = asyncError(async (req, res) => {
   const taskId = req.query.id;
 
   const task = await Task.findById(taskId);
-  if (!task) return errorHandler(res, 404, 'Task not found');
+  if (!task) return errorHandler(res, 404, task);
 
   if (req.method === 'PUT') {
     task.isCompleted = !task.isCompleted;
