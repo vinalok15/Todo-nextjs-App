@@ -68,9 +68,4 @@ const Page = () => {
   );
 };
 
-export const metadata = {
-  title: 'Register',
-  description: 'This is a Register page.',
-};
-
 export default Page;

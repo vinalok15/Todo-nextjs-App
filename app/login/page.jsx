@@ -60,9 +60,4 @@ const Page = () => {
   );
 };
 
-export const metadata = {
-  title: 'Login',
-  description: 'This is a Login page.',
-};
-
 export default Page;
